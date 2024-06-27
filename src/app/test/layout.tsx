@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 
 export const metadata = {
-  title: 'hihi',
-  description: 'haha',
+  title: 'Test',
+  description: 'Test Page',
 };
 
 const layout = ({ children }: PropsWithChildren) => {
