@@ -13,6 +13,12 @@ const config = {
       },
     },
     extend: {
+      height: {
+        'calc-100-minus-80': 'calc(100% - 80px)',
+      },
+      backgroundColor: {
+        'white-trans-50': '#ffffff50',
+      },
       colors: {
         'black-85': 'rgba(0, 0, 0, 0.85)',
         border: 'hsl(var(--border))',
@@ -70,7 +76,22 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities }: { addUtilities: Function }) {
+      const newUtilities = {
+        '.line-clamp-3': {
+          overflow: 'hidden',
+          display: '-webkit-box',
+          '-webkit-box-orient': 'vertical',
+          '-webkit-line-clamp': '3',
+        },
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
 } satisfies Config;
 
 export default config;
+

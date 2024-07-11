@@ -5,7 +5,7 @@ const ThemeProvider = ({ children }: PropsWithChildren) => {
   const config = useThemeProviderStore((state) => state.theme);
   return (
     <div
-      className="h-full w-full bg-opacity-70 !py-0 object-cover bg-contain bg-repeat-round"
+      className="h-full w-full bg-blend-color-dodge !py-0 object-cover bg-contain bg-repeat-round"
       style={{ backgroundImage: `url(${config.backgroundImage})`, backgroundColor: config.background }}
     >
       {children}

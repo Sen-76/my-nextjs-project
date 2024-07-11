@@ -10,6 +10,7 @@ import { CustomScroll } from 'react-custom-scroll';
 import { Label } from '@/components/ui/label';
 import debounce from 'lodash.debounce';
 import Image from 'next/image';
+import { CustomButton } from '@/components/ui/custom-button';
 
 export const ThemeConfigSheet = () => {
   const config = useThemeProviderStore((state) => state);
@@ -22,7 +23,9 @@ export const ThemeConfigSheet = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <FontAwesomeIcon icon={faGear} />
+        <CustomButton>
+          <FontAwesomeIcon icon={faGear} />
+        </CustomButton>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="px-6">
@@ -76,7 +79,7 @@ export const ImageOption = (props: IImageOption) => {
     >
       <RadioGroupItem value={src.src} id={src.src} className="z-20 !bg-white ml-1 mt-1" />
       <Label htmlFor={src.src} className="cursor-pointer ml-[-20px]">
-        <Image className="object-cover h-24 hover:opacity-70 rounded-lg" width={155} src={src} alt="background-img" />
+        <Image className="object-cover h-24 hover:opacity-70 rounded-lg" width={163} src={src} alt="background-img" />
       </Label>
     </div>
   );

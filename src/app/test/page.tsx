@@ -4,8 +4,8 @@ import { toast } from 'sonner';
 import Todos from './components/test-react-query';
 import { BearCounter, Controls } from './components/counter';
 
-export const title = 'hihi';
-export default function SonnerDemo() {
+export const title = 'Test Page';
+export default function Test() {
   return (
     <>
       <Button

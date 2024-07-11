@@ -11,12 +11,14 @@ type State = {
     background: string;
     backgroundImage: string | null;
     backgroundImageOption: A[];
+    sideBarWidth: string;
   };
 };
 
 type Actions = {
   changeBackgroundColor: (color: string) => void;
   changeBackgroundImage: (image: string | null) => void;
+  changeSideBarWidth: (width: string) => void;
 };
 
 const useThemeProviderStore = create<State & Actions>((set) => ({
@@ -26,6 +28,7 @@ const useThemeProviderStore = create<State & Actions>((set) => ({
     background: '#2db48a3b',
     backgroundImage: '',
     backgroundImageOption: [img0, img1, img2, img3],
+    sideBarWidth: '100px',
   },
   changeBackgroundColor: (color: string) =>
     set((state) => ({
@@ -41,6 +44,14 @@ const useThemeProviderStore = create<State & Actions>((set) => ({
       theme: {
         ...state.theme,
         backgroundImage: image,
+      },
+    })),
+  changeSideBarWidth: (width: string) =>
+    set((state) => ({
+      ...state,
+      theme: {
+        ...state.theme,
+        sideBarWidth: width,
       },
     })),
 }));
